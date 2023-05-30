@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+template <typename t>
+   
+   
+   class robo {
+       t a,b;
+       public:
+       robo(t x,t y) {
+           a=x;
+           b=y;
+       }
+       t add() {
+           return a+b;
+       }
+   };
+ int main() {
+     robo <int>obj1(1,2);
+     cout<<obj1.add()<<endl;
+     robo <float>obj2(1.1f,1.2f);
+     cout<<obj2.add()<<endl;
+     robo <string>obj3("uddand","shaik");
+     cout<<obj3.add()<<endl;
+      return 0;
+ }
