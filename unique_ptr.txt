@@ -1,0 +1,56 @@
+#include<iostream>
+#include<memory>
+using namespace std;
+ class Base {
+     public:
+     void show() {
+         cout<<"Hai"<<endl;
+     }
+ };
+ int main() {
+     unique_ptr<Base>p1(new Base);
+     p1->show();
+     cout<<p1.get()<<endl;//get address
+     unique_ptr<Base>p2=move(p1);//get ownership p1->p2
+     p2->show();
+     cout<<p1.get()<<endl;//0
+     cout<<p2.get()<<endl;//address
+     unique_ptr<Base>p3=move(p2);//get ownership p2->p3
+     p3->show();
+     cout<<p1.get()<<endl;//0
+     cout<<p2.get()<<endl;//0
+      cout<<p3.get()<<endl;//get address
+     return 0;
+ }
+
+
+ex-2******************//////************************
+
+
+#include<iostream>
+#include<memory>
+using namespace std;
+class Rectangle {
+int length;
+int breadth;
+public:
+Rectangle(int l, int b) {
+length=l;
+breadth=b;
+}
+int  area() {
+return length*breadth;
+}
+};
+int main() {
+unique_ptr<Rectangle>ptr(new Rectangle(10,5));
+cout<<"ptr:"<<ptr->area()<<endl; // area=50
+cout<<ptr.get()<<endl;
+unique_ptr<Rectangle>ptr2=move(ptr);
+cout<<"ptr2:"<<ptr2->area()<<endl;
+cout<<ptr2.get()<<endl;
+ 
+cout<<ptr.get()<<endl;
+
+return 0;
+}
