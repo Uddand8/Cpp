@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+class robo {
+    int x;
+    public:
+    robo() {
+        x=10;
+        cout<<"constructor called"<<endl;
+    }
+    ~robo() {
+        cout<<"Destructor called"<<endl;
+    }
+    void display() {
+        cout<<"x="<<x<<endl;
+    }
+};
+int main() {
+    robo r1;
+    r1.display();
+    return 0;
+}
