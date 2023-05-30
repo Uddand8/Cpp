@@ -1,0 +1,149 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+
+
+int main()
+{
+    vector<int>num={1,2,3,4,5};
+    cout<<"intial vector:";
+    for(const int& i:num) {
+        cout<<i<<" ";
+    }
+    num.push_back(6);
+    num.push_back(8);
+    
+    cout<<"Element at index 0:"<<num.at(0)<<endl;
+     cout<<"Element at index 3:"<<num.at(3)<<endl;
+      cout<<"Element at index 5:"<<num.at(5)<<endl;
+       cout<<"Element at index 6:"<<num.at(6)<<endl;
+       
+       cout<<"update vector:";
+       for(const int& i:num) {
+           cout<<i<<" "<<endl;
+       }
+       
+       num.pop_back();
+       num.pop_back();
+       cout<<"update vector:";
+       for(const int& i:num) {
+           cout<<i<<" "<<endl;;
+       }
+       
+       
+       
+       num.at(0)=10;
+       num.at(4)=200;
+       cout<<"update vector:";
+       for(const int& i:num) {
+           cout<<i<<" ";
+       }
+
+
+       
+       if(num.empty()) {
+           cout<<"vector empty"<<endl;
+       }
+       else {
+           cout<<"vector size:"<<num.size()<<endl;
+       }
+
+    return 0;
+}
+
+
+
+
+
+
+Ex-2**********************//************************
+
+
+
+
+
+#include <iostream>
+#include <vector>
+
+int main() {
+    // Create an empty vector of integers
+    std::vector<int> numbers;
+
+    // Add elements to the vector
+    numbers.push_back(10);
+    numbers.push_back(20);
+    numbers.push_back(30);
+
+    // Access elements of the vector
+    std::cout << "First element: " << numbers.at(0) << std::endl;
+    std::cout << "Second element: " << numbers[1] << std::endl;
+    std::cout << "Third element: " << numbers[2] << std::endl;
+
+    // Modify elements of the vector
+    numbers.at(0) = 50;
+    numbers[1]=100;
+
+    // Iterate over the vector using a range-based for loop
+    std::cout << "Vector elements: ";
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    // Get the size of the vector
+    std::cout << "Vector size: " << numbers.size() << std::endl;
+
+    // Remove an element from the vector
+    numbers.pop_back();
+
+    // Check if the vector is empty
+    if (numbers.empty()) {
+        std::cout << "Vector is empty" << std::endl;
+    } else {
+        std::cout << "Vector is not empty" << std::endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+Ex-3*****************//*************
+
+
+
+#include <iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+
+    vector <string> languages = {"Python", "C++", "Java"};
+
+    // create an iterator to a string vector
+    vector<string>::iterator itr;
+
+    // iterate over all elements
+    for (itr = languages.begin(); itr != languages.end(); itr++) {
+        cout << *itr << "  "<<endl;
+    }
+    
+    itr=languages.begin();
+    cout<<"languages[0]="<<*itr<<endl;
+    
+    itr=languages.begin()+2;
+    cout<<"languages[2]="<<*itr<<endl;
+    
+    languages.at(2)="Qt";
+    
+    languages.push_back("QML");
+    
+for (itr = languages.begin(); itr != languages.end(); itr++) {
+        cout << *itr << "  "<<endl;
+    }
+    cout<<"size of vector :"<<languages.size()<<endl;
+    return 0;
+}
+
