@@ -1,0 +1,28 @@
+/******************************************************************************
+
+    the calloc() function is not directly available, as it belongs to the C standard library. However,
+    you can achieve similar functionality by using the new operator with parentheses to initialize an array with zero values
+
+*******************************************************************************/
+
+#include <iostream>
+
+int main() {
+    size_t size = 10;
+    int* array = new int[size]();  // Initialize array with zero values
+
+    // Access and modify elements
+    for (size_t i = 0; i < size; ++i) {
+        array[i] = i + 1;  // Assign non-zero values
+    }
+
+    // Print array elements
+    for (size_t i = 0; i < size; ++i) {
+        std::cout << array[i] << " ";
+    }
+    std::cout << std::endl;
+
+    delete[] array;  // Free memory
+
+    return 0;
+}
