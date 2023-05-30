@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+class Example {
+    public:
+        int* data;
+        int size;
+
+        // Default constructor
+        Example() {
+            data = new int[10];
+            size = 10;
+        }
+
+        // Shallow copy constructor
+        Example(const Example& other) {
+            data = other.data;
+            size = other.size;
+        }
+
+        // Destructor
+        ~Example() {
+            delete[] data;
+        }
+};
+
+int main() {
+    Example e1; // Default constructor
+    e1.data[0] = 5;
+
+    Example e2 = e1; // Shallow copy constructor
+    cout << e2.data[0] << endl; // Output: 5
+
+    e2.data[0] = 10; // Modify the data in e1
+    cout << e2.data[0] << endl; // Output: 10 (same data as e1)
+    cout << e1.data[0] << endl;
+
+    return 0;
+}
