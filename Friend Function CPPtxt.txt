@@ -1,0 +1,40 @@
+/******************************************************************************
+
+1. Friend function is a non-member finction of that class.
+2. out-side of the member function cann't access the in-side of pvt-member function of that class.
+3.only possible way to acess the Friend-Function.
+4.Friend Function is declear inside of the class as pass on argument is object like "class"
+5.implementation is outside ofthe class.
+
+SYNTAX:Friend-Function
+  Friend Return-type Function-Name(arg/class object).
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+
+class robo {
+    int x,y;
+    public:
+    robo() {
+        x=10;
+        y=20;
+    }
+    friend void disp(robo r);
+};
+void disp(robo r) {
+    cout<<"x="<<r.x<<endl;
+    cout<<"y="<<r.y<<endl;
+}
+
+int main()
+{
+   robo obj;
+   disp(obj);
+   
+
+    return 0;
+}
