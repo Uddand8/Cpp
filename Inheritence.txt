@@ -1,0 +1,235 @@
+/******************************************************************************
+
+1. when only one class inherited another class.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+
+class robo {
+    int x,y,result;
+    public:
+    void disp() {
+        x=10;
+        y=20;
+       
+        cout<<"x:"<<x<<" "<<"y:"<<y<<endl;
+         result=x*y;
+        cout<<"result:"<<result<<endl;
+    }
+    };
+    class sana : public robo {
+        public:
+        int m,n,result;
+        void disp1() {
+            m=30;
+            n=40;
+            result=m*n;
+             cout<<"m:"<<m<<" "<<"n:"<<n<<endl;
+             cout<<"result:"<<result<<endl;
+        }
+    };
+    
+
+int main()
+{
+   
+  sana s;
+  s.disp1();
+  s.disp();
+
+    return 0;
+}
+
+
+
+
+#include<iostream>
+using namespace std;
+
+class Base {
+    int x,y,result;
+    public:
+    void disp() {
+        x=10;
+        y=20;
+        result=x*y;
+        cout<<"Base Result:"<<result<<endl;
+    }
+};
+class Derived1:public Base {
+    public:
+    int m,n,result;
+    void disp1() {
+         m=10;
+        n=20;
+        result=m/n;
+        cout<<"Derived1 Result:"<<result<<endl;
+    }
+};
+class Derived2:public Base {
+    public:
+    int a,b,result;
+    void disp2() {
+         a=10;
+        b=20;
+        result=a+b;
+        cout<<"Derived2 Result:"<<result<<endl;
+    }
+};
+int main() {
+    Derived2 d;
+    d.disp();
+    Derived1 d1;
+    
+    d1.disp1();
+    d.disp2();
+    return 0;
+}
+
+
+
+#include <iostream>  
+using namespace std;  
+class A  
+{  
+    int a = 4;  
+    int b = 5;  
+    public:  
+    void dis()  
+    {  
+        int c = a*b;  
+      cout<<"c:"<<c<<endl; 
+    }     
+};  
+  
+class B : private A  
+{  
+    public: 
+    int m=2;
+    int n=3;
+    void display()  
+    {  
+        int z = m*n;  
+        std::cout <<"z : "<<z<< std::endl;  
+    }  
+};  
+int main()  
+{  
+  B b;  
+  b.display();  
+  b.dis();
+  
+    return 0;  
+}  
+
+
+#include<iostream>
+using namespace std;
+
+class A{
+    protected:
+    int a;
+    public:
+    void get_a(int n) {
+        a=n;
+    }
+};
+class B{
+    protected:
+    int b;
+    public:
+    void get_b(int n) {
+        b=n;
+    }
+};
+class C:public A,public B {
+    public:
+    void display() {
+        cout<<"A value is:"<<a<<endl;
+        cout<<"B value is:"<<b<<endl;
+        cout<<"Addition of a And b:"<<a+b<<endl;
+    }
+};
+int main() {
+    C c;
+    c.get_a(10);
+    c.get_b(20);
+    c.display();
+}
+
+#include<iostream>
+using namespace std;
+
+class A {
+    public:
+    void display() {
+        cout<<"class A"<<endl;
+    }
+};
+class B{
+    public:
+    void display() {
+        cout<<"class B"<<endl;
+    }
+};
+class C:public A,public B {
+    public:
+    void display() {
+      cout<<"class C"<<endl;
+    }
+};
+int main() {
+  C c;
+  c.A::display();
+  c.B::display();
+  c.display();
+    return 0;
+}
+
+
+#include<iostream>
+using namespace std;
+
+class A{
+    public:
+    int a;
+    void get_a(int n){
+        a=n;
+        cout<<"a:"<<a<<endl;
+    }
+};
+class B:public A {
+    public:
+    int b;
+    void get_b(int n){
+        b=n;
+        cout<<"b:"<<n<<endl;
+    }
+};
+class C{
+    public:
+    int c;
+    void get_c(int n){
+        c=n;
+        cout<<"c:"<<c<<endl;
+    }
+};
+class D:public B, public C {
+    public:
+   void mul(){
+        cout<<"multi of "<<a<<"*"<<b<<"*"<<c<<":"<<a*b*c<<endl;
+    }
+};
+
+int main(){
+    D d;
+    d.get_a(10);
+    d.get_b(20);
+    d.get_c(30);
+   d.mul();
+   return 0;
+}
