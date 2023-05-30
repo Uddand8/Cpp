@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+  std::vector<int> nums = {1, 2, 3, 4, 5};
+
+  // Use a lambda expression to print all the elements in the vector
+  std::for_each(nums.begin(), nums.end(), [](int num) {
+    std::cout << num << " ";
+  });
+  
+  // Use a lambda expression to filter out all even numbers from the vector
+  nums.erase(std::remove_if(nums.begin(), nums.end(), [](int num) {
+    return num % 2 == 0;
+  }), nums.end());
+  
+  // Print the remaining elements in the vector
+  std::cout << std::endl;
+  std::for_each(nums.begin(), nums.end(), [](int num) {
+    std::cout << num << " ";
+  });
+  
+  return 0;
+}
+
+
+
+capture a value:-
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int intial_sum=100;
+    auto add=[intial_sum](int num){
+       return intial_sum+num;
+    };
+int final_sum=add(10);
+cout<<"100+10="<<final_sum<<endl;
+return 0;
+}
