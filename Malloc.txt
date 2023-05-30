@@ -1,0 +1,42 @@
+/******************************************************************************
+
+    In C programming, the malloc function is used to dynamically allocate memory during the execution of a program.
+    It stands for "memory allocation." The malloc function is defined in the stdlib.h header file.
+    The malloc function takes a single argument, size, which represents the number of bytes to allocate. 
+    It returns a pointer to the allocated memory if successful, or NULL if it fails to allocate the requested memory.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int* numbers;
+    int count, i;
+
+    printf("Enter the number of integers: ");
+    scanf("%d", &count);
+
+    // Dynamically allocate memory for 'count' integers
+    numbers = (int*)malloc(count * sizeof(int));
+
+    if (numbers == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
+    printf("Enter %d integers:\n", count);
+    for (i = 0; i < count; i++) {
+        scanf("%d", &numbers[i]);
+    }
+
+    printf("You entered: ");
+    for (i = 0; i < count; i++) {
+        printf("%d ", numbers[i]);
+    }
+
+    // Free the dynamically allocated memory
+    free(numbers);
+
+    return 0;
+}
