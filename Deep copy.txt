@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+class Myclass {
+    public:
+    int *data;
+    int size;
+    
+    Myclass():data(nullptr),size(0){}
+    Myclass(int *d,int s):size(s){
+        data=new int[size];
+        for(int i=0; i<size; i++) {
+            data[i]=d[i];
+        }
+    }
+    Myclass( const Myclass &other):size(other.size) {
+         data=new int[size];
+        for(int i=0; i<size; i++) {
+            data[i]=other.data[i];
+        }
+        
+    }
+    ~Myclass() {
+        delete[]data;
+    }
+};
+int main() {
+    int arr[]={1,2,3};
+    Myclass obj1(arr,3);
+    Myclass obj2(obj1);
+    cout<<obj1.data[0]<<endl;
+    cout<<obj2.data[0]<<endl;
+    obj1.data[0]=4;
+     cout<<obj1.data[0]<<endl;
+    cout<<obj2.data[0]<<endl;
+    
+    return 0;
+}
