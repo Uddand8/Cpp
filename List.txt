@@ -1,0 +1,216 @@
+C++ List is a STL container that stores elements randomly in unrelated locations. To maintain sequential ordering, every list element includes two links:
+
+-> one that points to the previous element
+-> another that points to the next element
+-> In C++, the STL list implements the doubly-linked list data structure. As a result, we can iterate both forward and backward.
+
+Create C++ STL List
+To create a list, we need to include the list header file in our program.
+
+#include<list>
+syntax:-
+
+std::list<Type> list_name = {value1, value2, ...};
+
+ex-1***********//********
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int main() {
+
+    // create the list
+    list<int> numbers {1, 2, 3, 4};
+  
+    // display the elements of the list
+    cout << "List Elements: ";
+    for(int number : numbers) {
+        cout << number <<", ";
+    }
+    
+    return 0;
+
+}
+
+
+Output
+
+List Elements: 1, 2, 3, 4,
+
+
+
+ex:-2**************//****************
+
+Basic operations on List
+C++ STL provides various functions that we can use to perform different operations on lists. Let's look at some commonly used list functions to perform the following operations:
+
+Add elements
+Access elements
+Remove elements
+1. Add Elements to a List in C++
+We can add values in a list using the following functions:
+
+push_front() - inserts an element to the beginning of the list
+push_back() - adds an element to the end of the list
+
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int main() {
+    
+    // create a list
+    list<int> numbers = {1, 2, 3};
+  
+    // display the original list 
+    cout << "Initial List: ";
+    for(int number: numbers) {
+        cout << number << ", ";
+    }
+  
+    // add element at the beginning
+    numbers.push_front(0);
+
+    // add element at the end
+    numbers.push_back(4);
+
+    // display the modified list
+    cout << endl << "Final List: ";
+    for(int number : numbers) {
+        cout << number << ", ";
+    }
+
+  return 0;
+
+}
+
+Output
+
+Initial List: 1, 2, 3, 
+Final List: 0, 1, 2, 3, 4,
+
+
+2. Access List Elements
+We can access list elements using the following functions:
+
+front() - returns the first element of the list
+back() - returns the last element of the list
+
+
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int main() {
+
+    // create a list
+    list<int> numbers = {1, 2, 3, 4, 5};
+  
+    // display the first element
+    cout << "First Element: " << numbers.front() << endl;
+  
+    // display the last element
+    cout << "Last Element: " << numbers.back();
+  
+    return 0;
+    
+}
+
+Output
+
+First Element: 1
+Last Element: 5
+
+3. Delete List Elements
+We can delete list elements using the following functions:
+
+pop_front() - removes the element at the beginning of the list
+pop_back() - removes the element at the end of the list
+
+
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int main() {
+    // create a list
+    list<int> numbers = {1, 2, 3, 4, 5};
+ 
+    // display the original list 
+    cout << "Inital List: ";
+    for(int number : numbers) {
+        cout << number << ",  ";
+    }
+
+    // remove the first element of the list
+    numbers.pop_front();
+
+    // remove the last element of the list
+    numbers.pop_back();
+
+    // display the modified list 
+    cout << endl << "Final List: ";
+    for(int number : numbers) {
+        cout << number << ", ";
+    }
+
+    return 0;
+}
+
+Output
+
+Inital List: 1,  2,  3,  4,  5,  
+Final List: 2, 3, 4,
+
+
+Other List Functions in C++
+While there are many functions that can be used with lists, we will only look at some of the functions in the table below:
+
+Function	Description
+reverse()	Reverses the order of the elements.
+sort()	Sorts the list elements in a particular order.
+unique()	Removes consecutive duplicate elements.
+empty()	Checks whether the list is empty.
+size()	Returns the number of elements in the list.
+clear()	Clears all the values from the list
+merge()	Merges two sorted lists.
+Access elements using an iterator
+We can use iterators to access a list element at a specified position. For example,
+
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int main() {
+
+     // create a list
+    list<int> numbers = {1, 2, 3, 4, 5};
+
+    // create an iterator to point to the first element of the list
+    list<int>::iterator itr = numbers.begin();
+  
+    // increment itr to point to the 2nd element
+    ++itr;
+    
+    //display the 2nd element
+    cout << "Second Element: " << *itr << endl;
+  
+    // increment itr to point to the 4th element
+    ++itr;
+    ++itr;
+
+    // display the 4th element
+    cout << "Fourth Element: " << *itr;
+  
+    return 0;
+}
+Run Code
+Output
+
+Second Element: 2
+Fourth Element: 4
