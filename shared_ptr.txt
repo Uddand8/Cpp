@@ -1,0 +1,90 @@
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class A {
+public:
+	void show() { cout << "A::show()" << endl; }
+};
+
+int main()
+{
+	shared_ptr<A> p1(new A);
+	cout << p1.get() << endl;//0x561d46cd8eb0
+	p1->show();//A::show()
+	shared_ptr<A> p2(p1);
+	p2->show();//A::show()
+	cout << p1.get() << endl;//0x561d46cd8eb0
+	cout << p2.get() << endl;//0x561d46cd8eb0
+
+	// Returns the number of shared_ptr objects
+	// referring to the same managed object.
+	cout << p1.use_count() << endl;
+// 	cout << p2.use_count() << endl;
+
+	// Relinquishes ownership of p1 on the object
+	// and pointer becomes NULL
+	p1.reset();
+	p2.reset();
+	cout << p1.get() << endl;
+	cout << p2.use_count() << endl;
+	cout << p2.get() << endl;
+
+	return 0;
+}
+
+
+
+
+// output:- 
+// 0x5645f94b7eb0
+// A::show()
+// A::show()
+// 0x5645f94b7eb0
+// 0x5645f94b7eb0
+// 2
+// 0
+// 0
+// 0
+
+
+
+
+
+
+
+
+
+
+
+
+ex-2********************//***************
+
+
+#include<iostream>
+#include<memory>
+using namespace std;
+class Rectangle {
+int length;
+int breadth;
+public:
+Rectangle(int l, int b) {
+length=l;
+breadth=b;
+}
+int  area() {
+return length*breadth;
+}
+};
+int main() {
+shared_ptr<Rectangle>ptr(new Rectangle(10,5));
+cout<<"ptr:"<<ptr->area()<<endl; // area=50
+cout<<ptr.get()<<endl;
+shared_ptr<Rectangle>ptr2(ptr);
+cout<<"ptr2:"<<ptr2->area()<<endl;
+cout<<ptr2.get()<<endl;
+ 
+cout<<ptr.get()<<endl;
+
+return 0;
+}
