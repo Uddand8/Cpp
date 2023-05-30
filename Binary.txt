@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+class base {
+    int x;
+    public:
+    base()=default;
+    base(int a) {
+        x=a;
+    }
+    base operator + (base &t) {
+        base temp;
+        temp.x=x+t.x;
+        return temp;
+    }
+    void display() {
+        cout<<"x value : "<<x<<endl;
+    }
+};
+int main() {
+    base b1(10),b2(20);
+    base b3;
+    b3=b1+b2;
+    b3.display();
+    return 0;
+}
+
+
+output:-
+x value : 30
