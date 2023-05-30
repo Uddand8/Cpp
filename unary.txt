@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+class base{
+    int x;
+    public:
+    base(int n) {
+        x=n;
+    }
+    
+    void operator ++() {
+        ++x;
+    }
+    void operator ++(int) {
+        x++;
+    }
+    void display() {
+        cout<<"x value is:"<<x<<endl;
+    }
+};
+int main() {
+    base b(10);
+    ++b;
+    b.display();
+    b++;
+    b.display();
+    return 0;
+}
+
+output:-
+x value is:11
+x value is:12
