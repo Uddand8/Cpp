@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+class robo {
+    int x;
+    static int count;
+    public:
+    void getdata(int a) {
+        x=a;
+        count=count+1;
+    }
+    void display() {
+        cout<<"count="<<count<<endl;
+    }
+};
+int robo :: count=0;
+int main() {
+    robo r1, r2;
+    r1.getdata(10);
+    // cout<<r1.getdata()<<endl;
+     r1.display();
+    r2.getdata(20);
+   
+    r2.display();
+    return 0;
+}
