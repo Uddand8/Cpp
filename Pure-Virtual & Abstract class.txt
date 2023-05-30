@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+class Baseclass {
+    public:
+    virtual void robo() =0;
+    virtual void chitti()=0;
+    void sana() {
+        cout<<"sana() method of base class"<<endl;
+    }
+};
+
+class Derivedclass: public Baseclass {
+    public:
+    void robo() {
+        cout<<"robo() method of derived class"<<endl;
+    }
+     void chitti() {
+        cout<<"chitti() method of derived class"<<endl;
+    }
+};
+int main() {
+    Derivedclass D;
+    D.robo();
+    D.chitti();
+    D.sana();
+    return 0;
+    
+}        
