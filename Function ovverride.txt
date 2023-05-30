@@ -1,0 +1,69 @@
+#include <iostream>
+
+class Base {
+public:
+    virtual void display() {
+        std::cout << "This is the base class." << std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void display() override {  // Override the base class's display() function
+        std::cout << "This is the derived class." << std::endl;
+    }
+};
+
+int main() {
+    Base* basePtr = new Derived();  // Pointer of base class pointing to derived class object
+    basePtr->display();  // Calls the display() function of the derived class
+    delete basePtr;
+
+    return 0;
+}
+
+output:-
+
+This is the derived class
+
+
+
+
+
+Ex-2********************//******************
+
+
+#include <iostream>
+using namespace std;
+
+class Base {
+    public:
+    virtual void show() {
+        cout<<"Base class Called"<<endl;
+    }
+};
+
+class derived:public Base {
+    public:
+    void show() override {
+        cout<<"Derived class Called"<<endl;
+    }
+};
+int main() {
+    Base *ptr;
+    Base b;
+    derived d;
+    
+    ptr=&b;
+    ptr->show();
+    ptr=&d;
+    ptr->show();
+   
+    return 0;
+    
+}
+
+
+// output:- 
+// Base class Called
+// Derived class Called
