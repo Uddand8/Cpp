@@ -67,3 +67,42 @@ int main() {
 // output:- 
 // Base class Called
 // Derived class Called
+
+
+
+
+ex:-3****************//****************
+#include <iostream>
+
+class Base {
+public:
+    virtual ~Base() {}
+};
+
+class Derived : public Base {
+public:
+    void printDerived() {
+        std::cout << "Derived class" << std::endl;
+    }
+};
+
+int main() {
+    Base* basePtr = new Base();
+    
+    // Attempting dynamic_cast from Base* to Derived* on an object of Base type
+    Derived* derivedPtr = dynamic_cast<Derived*>(basePtr);
+    
+    if (derivedPtr == nullptr) {
+      std::cout<<"null"<<std::endl;
+        throw std::bad_cast(); // Throw an exception if the cast is invalid
+    }
+    
+    derivedPtr->printDerived();
+    
+    delete basePtr;
+    
+    return 0;
+}
+// output:-
+// null
+// bad-cast

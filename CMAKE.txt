@@ -1,0 +1,29 @@
+CMake is an open-source, cross-platform build system and build configuration tool. 
+It is designed to simplify the build process for software projects that use multiple platforms and compilers. 
+CMake stands for "cross-platform make."
+
+Here are some key details about CMake:
+
+Build System: CMake helps in managing the build process of a project. 
+It generates build scripts or project files that can be used with different build systems, such as GNU Make, Ninja, or Visual Studio solutions.
+
+Cross-Platform: CMake is designed to work on various operating systems, including Windows, macOS, Linux, and Unix-like systems. It provides a consistent interface for configuring and building projects across different platforms.
+
+CMakeLists.txt: CMake uses a script-like configuration file called CMakeLists.txt, which defines the build settings, dependencies, and rules for compiling and linking the project. The CMakeLists.txt file is typically placed in the project's root directory.
+
+Configuration Process: CMake follows a two-step process: configuration and generation. During configuration, CMake analyzes the CMakeLists.txt files and generates an internal representation of the build system. It also detects the available compilers, libraries, and other dependencies on the system.
+
+Generator: After configuration, CMake generates the appropriate build system files or project files based on the platform and the chosen generator. These files can be used with the native build system, such as Makefiles or Visual Studio solutions, to compile and build the project.
+
+Variables and Commands: CMake provides a wide range of variables and commands to define project properties, set compiler flags, specify source files, link libraries, and control the build process. These can be used in the CMakeLists.txt file to customize the build behavior.
+
+Modules and Packages: CMake supports the use of modules and packages to provide additional functionality and simplify the handling of dependencies. Modules are pre-defined scripts that provide useful functions, while packages are third-party libraries or software that can be easily integrated into a project.
+
+Integration with IDEs: CMake integrates well with popular integrated development environments (IDEs) like Visual Studio, Xcode, and CLion. It can generate project files compatible with these IDEs, enabling developers to edit and build their projects within the IDE.
+
+CMake is widely used in the software development industry due to its versatility, ease of use, and platform independence. It simplifies the build process, promotes code portability, and enables efficient collaboration on projects across different platforms.
+
+
+
+
+

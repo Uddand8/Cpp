@@ -1,0 +1,55 @@
+****************************C++*************
+
+1)  C++ OOPS Concepts
+2)  Virtual Functions/Pure Virtual Functions/Pure Virtual Destructor/Virtual Destructor
+3)  Casting - Static/Dynamic Smart Pointers Memory Management 
+4)  Association, Aggregation, Composition This pointer
+5)  Static variable/function 
+5)  Operator overloading
+6)  Programs: strcpy, reverse string, palindrome, anagram, implement stack
+7)  Constructor - Copy Constructor(Deep/Shallow) 
+8)  Friend Function/Class
+9)  Dynamic cast using reference functor
+10) Dynamic cast using reference functor
+11) Implement new operator
+12) inline function 
+13) array dynamic allocation
+14) class template how to push class object into vector mutable in class
+15) 
+
+
+***************************CPP Standards************
+
+1) Move Constructor 
+2) Lambda
+3) Auto,Null_ptr
+4) Variadic Template
+5) smart Pointers
+6) Move,Move assignment
+7) override, Ivalue & Rvalue
+8) function template/class template specialize func template/veriadic Templates.
+9) member initialization 
+10) strongly enum
+11) constexpr
+12) final Keyword
+13) delete
+14) default 
+
+***************************Data Stracture********************
+1) Singly Linked List 
+2) Add node at the start 
+3) Delete n node 
+4) Add node at n position
+5) Reverse linked list
+6) Print linked list in reverse/forward order - Check linked list is circular 
+7) Find middle of linked list
+
+
+
+***************************STL******************** 
+
+1) list/vector/map/set 
+2) diff between array vs list
+ 
+ 
+ 

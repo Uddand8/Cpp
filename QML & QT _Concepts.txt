@@ -1,0 +1,16 @@
+1) QT-Udemy
+2) QML-Udemy
+3) CMAKE
+4) Gtest
+
+
+Udemy cerdentials:
+
+1) username: hr@deltaiot.in
+   password: Delta@321
+
+2) username: sureshreddy1995@gmail.com
+   password: L$rw0212
+
+
+

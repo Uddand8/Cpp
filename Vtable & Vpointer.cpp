@@ -1,4 +1,4 @@
-VTABLE AND VPOINTER:- The class contain virtual function,then compiler automatically create the VTABLE. the VTABLE is contain the address of class.
+VTABLE AND; VPOINTER:- The class contain virtual function,then compiler automatically create the VTABLE. the VTABLE is contain the address of class.
 -> *VPTR in Base class. it is point to VTABLE.
 
 #include <iostream>

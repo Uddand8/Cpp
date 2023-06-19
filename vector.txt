@@ -40,6 +40,58 @@ int main()
        }
 
 
+
+
+ex-2*******************//*************
+
+
+#include<iostream>
+#include<vector>
+using namespace std;
+int main() {
+vector<int>myvector;
+
+myvector.push_back(10);
+myvector.push_back(20);
+myvector.push_back(30);
+myvector.push_back(40);
+
+cout<<"All elements:";
+for (size_t i = 0; i < myvector.size(); i++) {
+        std::cout << myvector[i] << " ";
+    }
+    
+    myvector.pop_back();
+    myvector.pop_back();
+    cout<<endl;
+    cout<<"pop element:"<<myvector[3]<<endl;
+    cout<<"pop element:"<<myvector[2]<<endl;
+    
+    cout<<"All elements:";
+for (size_t i = 0; i < myvector.size(); i++) {
+        std::cout << myvector[i] << " ";
+    }
+     cout<<endl;
+    
+    cout<<"first element:"<<myvector[0]<<endl;
+    cout<<"first element:"<<myvector[1]<<endl;
+    cout<<"vector capacity:"<<myvector.capacity()<<endl;
+    cout<<"vector size:"<<myvector.size()<<endl;
+    
+    myvector.clear();
+    
+    if(myvector.empty()) {
+        cout<<"vector is empty"<<endl;
+    }
+    else
+    {
+        cout<<"vector is not empty"<<endl;
+    }
+    
+    return 0;
+}
+
+
        
        if(num.empty()) {
            cout<<"vector empty"<<endl;

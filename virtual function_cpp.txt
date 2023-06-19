@@ -1,0 +1,71 @@
+virtual Function:
+we are using virtual function in Base class.
+just it override the derived class functionality by using Base class Pointer at run-time.
+every function if it virtual it will call the v-ptr it will create the vtable.
+v-table don't have any acceses-specifier like public, private or protected
+if derived class Dont have any display function. the v-ptr is going to another v-table.
+
+#include<iostream>
+using namespace std;
+class Base {
+    public:
+    virtual void display() {
+        cout<<"A class"<<endl;
+    }
+};
+class Derived:public Base{
+    private:
+   virtual  void display() {
+        cout<<"B class"<<endl;
+    }
+};
+int main() {
+    Base *ptr=new Derived;
+    ptr->display();
+    return 0;
+}
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+class car {
+    public:
+    virtual void display() {
+        cout<<"Car"<<endl;
+    }
+};
+class sudan:public car{
+    private:
+     void display() {
+        cout<<"sudan"<<endl;
+    }
+};
+class suv:public car{
+    private:
+     void display() {
+        cout<<"suv"<<endl;
+    }
+};
+class sam:public car{
+    private:
+     void display() {
+        cout<<"sam"<<endl;
+    }
+};
+void perform(car *ptr){
+    ptr->display();
+}
+int main() {
+    car *ptr=new sudan();
+    car *ptr1=new suv();
+    car *ptr2=new sam();
+    perform(ptr);
+    perform(ptr1);
+    perform(ptr2);
+    return 0;
+}

@@ -1,0 +1,73 @@
+#include <iostream>
+
+using namespace std;
+class Base {
+    public:
+    virtual void print() {
+        cout<<"Base Class"<<endl;
+    }
+};
+class Derived1 : public Base {
+    void print() {
+        cout<<"Derived1 Class...1"<<endl;
+    }
+};
+class Derived2 : public Base {
+    void print() {
+    cout<<"Derived2 class...2"<<endl;
+}
+};
+int main()
+{
+    Derived1 d1;
+    Derived2 d2;
+    Base *ptr1=dynamic_cast<Base*>(&d1);//Derived Class...1     ......note 0
+
+//    Base *ptr2=dynamic_cast<Base*>(&d2);//Derived2 class...2
+    ptr1->print();
+//    ptr2->print();
+    Derived2 *ptr2=dynamic_cast<Derived2*>(ptr1);
+    if(ptr2==nullptr) { //..........................................note 1
+        cout<<"null"<<endl; //null
+    }
+    return 0;
+}
+
+ex-3***********************//*************
+
+#include <iostream>
+
+class Base {
+public:
+    virtual ~Base() {}
+};
+
+class Derived : public Base {
+public:
+    void printDerived() {
+        std::cout << "Derived class" << std::endl;
+    }
+};
+
+int main() {
+    Base* basePtr = new Base();
+    
+    // Attempting dynamic_cast from Base* to Derived* on an object of Base type
+    Derived* derivedPtr = dynamic_cast<Derived*>(basePtr);
+    
+    if (derivedPtr == nullptr) {
+      std::cout<<"null"<<std::endl;
+        throw std::bad_cast(); // Throw an exception if the cast is invalid
+    }
+    
+    derivedPtr->printDerived();
+    
+    delete basePtr;
+    
+    return 0;
+}
+// output:- 
+
+// null
+// terminate called after throwing an instance of 'std::bad_cast'
+//   what():  std::bad_cast
